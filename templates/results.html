@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+<form action="/search" method="POST">
+    <div class="mb-5 d-flex position-relative">
+        <!-- Search -->
+        <div class="input-group w-50 mx-auto">
+            <input class="form-control py-2"
+                   placeholder="Search for smartphone" name="search_brand_model" value=""/>
+            <button type="submit" class="btn btn-secondary text-muted">Search
+            </button>
+        </div>
+    </div>
+</form>
+{% if searchsmartphones %}
+<div class="d-flex">
+    {% for smartphone in searchsmartphones %}
+    <div class="row row-cols-4 mb-5">
+        <div class="card mr-5" style="width: 20rem;">
+            <div class="card-body">
+                <a href="#">
+                    <h5 class="card-title">{{ smartphone['model'] }}</h5>
+                </a>
+                <div class="mt-5 d-flex justify-content-between">
+                    <p class="text-muted">{{ smartphone['brand'] }}</p>
+                    <p class="fw-bold">{{ smartphone['lowprice'] }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-auto">
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+</body>
+</html>

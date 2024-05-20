@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}"/>
+    <meta charset="UTF-8">
+    <title>Unos</title>
+    
+</head>
+<center>
+<body>
+    <form action="{{ url_for('add') }}" method="POST">
+
+<h1>
+<ul><label>Radni nalog službe mašinske dijagnostike </label></ul>
+</h1>
+       
+<ul><label>Broj naloga</label></ul>
+<input name="order_number"  type="text" value={{ordernumber[0][0]}} readonly>
+
+<ul><label for="grupa">Radna grupa</label> </ul>
+<select name="grupa" id="grupa"> 
+<option value="blanko"></option> 
+<option value="Vibrodijagnostika">Vibrodijagnostika</option> 
+<option value="Lasersko centriranje">Lasersko centriranje</option> 
+<option value="Ultrazvuk">Ultrazvuk</option> 
+<option value="blanko"></option> 
+</select>
+<ul><label for="sistem">Sistem</label></ul>
+<select name="sistem" id="sistem"> 
+<option value="blanko1"></option> 
+<option value="BTD">BTD</option> 
+<option value="I BTO">I BTO</option> 
+<option value="II BTO">II BTO</option> 
+<option value="II BTO">III BTO</option> 
+<option value="IV BTO">IV BTO</option> 
+<option value="IV BTO">V BTO</option> 
+<option value="VI BTO">VI BTO</option> 
+<option value="Drobilana">Drobilana</option> 
+<option value="Odvodnjavanje">Odvodnjavanje</option> 
+<option value="Elektrana">Elektrana</option> 
+<option value="Radionica">Radionica</option> 
+<option value="Ostalo">Ostalo</option> 
+</select>
+<ul><label for="objekat">Objekat</label></ul>
+<select name="objekat" id="objekat"> 
+<option value="blanko2"></option> 
+<option value="Odlagač">Bager</option> 
+<option value="Bager">SRs-400x14-1 (bager 14)</option> 
+<option value="Bager">SRs-470x20-3 (bager 13)</option> 
+<option value="Bager">Srs- 470</option>
+<option value="Bager">SchRS-800</option> 
+<option value="Bager">Ers- 710</option> 
+<option value="Bager">SRs-470x20-3 (bager 13)</option> 
+<option value="Bager">SRs-2000x28-3 (bager 1)</option> 
+<option value="Bager">SRs-2000x32-5 (bager 2)</option>
+<option value="Bager">SRs-470x20-3 (bager 13)</option> 
+<option value="Bager">SRs-2000x28-3 (bager 1)</option> 
+<option value="Bager">SRs-2000x32-5 (bager 2)</option>
+<option value="Bager">Srs-1300</option> 
+<option value="Bager">Srs-2000 (bager 3)</option> 
+<option value="Bager">Srs-2000 (bager))</option>
+
+<option value="Odlagač">Odlagač</option> 
+<option value="Odlagač">ArsB- 3500</option> 
+<option value="Odlagač">A2RsB-7200</option> 
+<option value="Odlagač">A2RsB-7200 II</option> 
+<option value="Odlagač">A2RsB-5500</option> 
+<option value="Odlagač">A2RsB-</option> 
+<option value="Odlagač">A2RsB-</option> 
+
+<option value="PKM">PKM</option> 
+<option value="Odlagač">BRs-2400 (banvagen 2)</option> 
+<option value="Odlagač">BRs-2400 (banvagen 3)</option> 
+<option value="Odlagač">BRs-2400 (banvagen 6)</option> 
+
+<option value="Pogonska stanica">Pogonska stanica</option> 
+
+<option value="Crpna stanica">Crpna stanica</option> 
+<option value="ostalo">ostalo</option> 
+</select>
+
+<ul><label for="machine">Mašina</label></ul>
+<select name="machine" id="machine">
+<option value="blanko3"></option>  
+<option value="Reduktor">Reduktor</option> 
+<option value="Reduktor">A1-315.KW.P-320.KW.I15,6</option> 
+<option value="Reduktor">BKFZ-280</option> 
+<option value="Reduktor">SKFY – 400</option> 
+<option value="Reduktor">TGL 18049/40LAO-1455x10P</option> 
+<option value="Reduktor">BKH 250</option> 
+<option value="Reduktor">A1-630.I-14.  P-630 KW</option> 
+<option value="Reduktor">KA-193-14</option> 
+<option value="Reduktor">TGL37088-CKHZ-560.  I-14. P-900 KW</option> 
+<option value="Reduktor">BKHX-320</option> 
+<option value="Reduktor">BKHX-450</option> 
+<option value="Reduktor">A10 LAI-280/250x16 GR </option> 
+<option value="Reduktor">BK 225</option> 
+<option value="Reduktor">RRT</option> 
+<option value="Elektromoto">Elektromotor</option> 
+<option value="Pumpa">Pumpa</option> 
+<option value="Ventilator">Ventilator</option> 
+</select>
+<ul><label for="sort">Tip posla</label> </ul>
+<select name="sort" id="sort"> 
+<option value="blanko4"></option> 
+<option value="Merenje i analiza vibracija">Merenje i analiza vibracija</option> 
+<option value="Terensko balansiranje">Terensko balansiranje</option> 
+<option value="Lasersko centriranje">Lasersko centriranje</option> 
+<option value="Kontrola saosnosti">Kontrola saosnosti</option> 
+<option value="Ultrazvucna defektoskopija">Ultrazvucna defektoskopija</option> 
+<option value="Termovizija">Termovizija</option>
+<option value="Endoskopija">Endoskopija</option>        
+</select>       
+<ul><label for="tip">Vrsta posla</label> </ul>
+<select name="tip" id="tip"> 
+<option value="blanko5"></option> 
+<option value="Predremontno merenje vibracija">Predremontno merenje vibracija</option> 
+<option value="Posleremontno merenje vibracija">Posleremontno merenje vibracija</option> 
+<option value="Interventno merenje vibracija">Interventno merenje vibracija</option> 
+<option value="Kontrolno merenje vibracija">Kontrolno merenje vibracija</option> 
+<option value="Lasersko centriranje pogona">Lasersko centriranje pogona</option> 
+<option value="Kontrola saosnosti pogona">Kontrola saosnosti pogona</option> 
+<option value="Kontrola saosnosti pogona">Kontrola saosnosti pogona</option> 
+<option value="Ultrazvucna kontrola">Ultrazvucna kontrola</option> 
+</select>
+<ul><label for="orderer">Nalog izdao</label> </ul>
+<select name="orderer" id="orderer"> 
+<option value="blanko6"></option> 
+<option value="Blaža Ilić">Blaža Ilić</option> 
+</select>
+
+<ul><label>Datum</label></ul>
+<input name="datum" type="date" />
+
+<ul><label for="reliser">Nalog realizovao</label> </ul>
+<select name="reliser" id="reliser"> 
+<option value="blanko7"></option> 
+<option value="Aleksandar Radulović">Aleksandar Radulović</option> 
+<option value="Radica Žukovsk">Radica Žukovski</option> 
+<option value="Miljan Petrović">Miljan Petrović</option> 
+<option value="Darko Aleksić">Darko Aleksić</option> 
+<option value="Ljubomir Kevro">Ljubomir Kevro</option> 
+</select> 
+
+<ul><button type="submit">Kreiraj nalog</button></ul>
+
+
+</form>
+
+<br></br>
+
+<button type="button" onclick="window.location.href='{{ url_for('show_permanent')}}';">Baza radnih naloga</button>
+<button type="button" onclick="window.location.href='{{ url_for('home')}}';">Početna</button>
+
+</body>
+</center>
+</html>

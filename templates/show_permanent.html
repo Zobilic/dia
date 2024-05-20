@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}"/>  
+    <meta charset="UTF-8">
+    <title>Pregled naloga</title>
+</head>
+<body>
+<h1>Spisak izdatih radnih naloga</h1>
+{% if query%}
+Ukupan broj radnih naloga je: {{ query | length }}
+{% else %}
+<p>Nema naloga u bazi in db</p>
+{% endif %}
+
+
+<button type="button" onclick="window.location.href='{{ url_for('add')}}';">Novi radni nalog</button>
+<button type="button" onclick="window.location.href='{{ url_for('search')}}';">Pretraga</button>
+
+
+<table style="margin-left: 20px;">
+<!-- Table headers -->
+<th>
+ <tr style="color: black; ">
+
+<th>Broj naloga</th>
+<th>Dijagnosticka grupa</th>
+<th>Sistem</th>
+<th>Objekat</th>
+<th>Masina</th>
+<th>Vrsta posla</th>
+<th>Vreme posla</th>
+<th>Nalog izdao</th>
+<th>Datum</th>
+<th>Nalog realizovao</th>
+  
+  
+</tr>
+</th>
+{%for order in query%}
+<tr>
+<td>
+{{order.order_number}}
+ </td>
+ <td>
+{{order.grupa}}
+</td>
+<td>
+{{order.sistem}}
+</td>
+ 
+<td>
+{{order.objekat}}
+</td>
+ <td>
+ {{order.machine}}
+ </td>
+ 
+ <td>
+ {{order.sort}}
+ </td>
+<td>
+{{order.tip}}
+</td>
+
+ 
+<td>
+   {{order.orderer}}
+</td>
+<td>
+{{order.datum}}
+</td>
+<td>
+{{order.reliser}}
+</td>
+
+   
+</tr>
+ {%endfor%}
+ </table>
+
+<button type="button" onclick="window.location.href='{{ url_for('home')}}';">Početna</button>
+                                                                                   
+</body>
+</html>
+
+

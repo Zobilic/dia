@@ -1,0 +1,24 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+{% if smart_phones%}
+Total smartphones in DB: {{ smart_phones | length }}
+<ul>
+    {% for smartphone in smart_phones %}
+
+    <li> {{ smartphone['grupa'] }} {{ smartphone['tip'] }} :
+        ${{ smartphone['lowprice'] }}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No smartphone in db</p>
+{% endif %}
+</body>
+</html>

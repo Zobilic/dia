@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}"/>  
+    <meta charset="UTF-8">
+    <title>Pregled naloga</title>
+</head>
+<body>
+<h1>Pregled izdatih radnih naloga</h1>
+ {% if entrys == []: %}
+        <p>Nema trenutnih unosa radnih naloga.</p>
+        {% endif %}
+    <ul>
+        {% for entry in entrys %}            
+        <li>            
+        {{entry.order_number}} - {{entry.grupa}} - 
+        {{entry.sistem}} - {{entry.objekat}} - {{entry.machine}} - 
+        {{entry.tip}} - {{entry.sort}} - {{entry.orderer}} - 
+        {{entry.datum}} - {{entry.reliser}}
+        </li>
+        {% endfor %}
+    </ul>
+
+                                                        
+<li><a href="{{ url_for('add') }}">Novi radni nalog</a></li>                                                                                                    
+<li><a href="{{ url_for('show_permanent') }}">Pregled baze radnih naloga</a></li>
+<a href="{{ url_for('home') }}">home</a>
+
+</select>
+</body>
+</html>
+
+

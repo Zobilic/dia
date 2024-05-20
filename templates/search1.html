@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+<form action="/search" method="POST">
+    <div class="mb-5 d-flex position-relative">
+        <!-- Search -->
+        <div class="input-group w-50 mx-auto">
+            <input class="form-control py-2"
+                   placeholder="Pretraga po grupi poslova" name="search_grupe_tipa" value=""/>
+            <button type="submit" class="btn btn-secondary text-muted">Pretraga
+            </button>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+<li>
+{{query}}
+</li>
+
+
+
+
+{% if variable is defined %}
+<li>
+{{query[0]}}
+</li>
+{% endif %}
+
+
+{% if variable is defined %}
+<li>
+{{query[0][1]}}
+</li>
+{% endif %}
+
+
+
+
+
+
+<li>
+prazno mestooooo
+</li>
+
+
+<div>
+{% if query == []: %}
+<p>Nema radnih naloga po trazenom kriterijumu grupe.</p>
+{% endif %}
+<ul>
+{% for qu in query %}            
+     
+ 
+<li>Broj radnog naloga: {{qu[1]}}</li>       
+<li>Radna grupa dijagnostike: {{qu[2]}}</li> 
+<li>Sistem: {{qu[3]}}</li> 
+<li>Objekat: {{qu[4]}}</li> 
+<li>Mašina: {{qu[5]}}</li> 
+<li>Tip posla: {{qu[6]}}</li> 
+<li>Vrsta posla: {{qu[7]}}</li> 
+<li>Nalog izdao: {{qu[8]}}</li> 
+<li>Datum: {{qu[9]}}</li> 
+     
+     
+         
+<li>{{qu.order_number}}</li><li>{{qu.grupa}}</li><li>
+{{qu.sistem}}</li><li>{{qu.objekat}}</li><li>{{qu.machine}}</li><li>
+{{qu.tip}}</li><li>{{qu.sort}}</li><li>{{qu.orderer}}</li><li>
+{{qu.datum}}</li><li>{{qu.reliser}}</li>
+        
+{% endfor %}
+    </ul>
+
+</div>
+
+
+
+
+
+</body>
+<a href="{{ url_for('home') }}">Pocetna</a>
+<a href="{{ url_for('show_permanent') }}">Prikazi kompletnu bazu bazu</a>
+
+
+
+
+</html>
+
+
+

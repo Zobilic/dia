@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}"/>  
+    <meta charset="UTF-8">
+    <title>Pregled naloga</title>
+</head>
+<body>
+<h1>Spisak izdatih radnih naloga</h1><a href="{{ url_for('add') }}">Novi radni nalog</a>
+
+
+Ukupan broj radnih naloga {{ query | length }}
+
+{%for order in query%}
+<tr>
+<td>
+{{order.order_number}}
+ </td>
+ <td>
+{{order.grupa}}
+</td>
+<td>
+{{order.sistem}}
+</td>
+ 
+<td>
+{{order.objekat}}
+</td>
+ <td>
+ {{order.machine}}
+ </td>
+ 
+ <td>
+ {{order.sort}}
+ </td>
+<td>
+{{order.tip}}
+</td>
+
+ 
+<td>
+   {{order.orderer}}
+</td>
+<td>
+{{order.datum}}
+</td>
+<td>
+{{order.reliser}}
+</td>
+
+   
+</tr>
+ {%endfor%}
+                                                                                
+</body>
+
+{% if query%}
+Ukupan broj radnih naloga je: {{ query | length }}
+<ul>
+    {% for order in query %}
+
+    <li> {{ order.grupa }} {{ order.tip }} :
+        {{ order.order_number }}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Nema naloga u bazi in db</p>
+{% endif %}
+
+
+
+</html>
+

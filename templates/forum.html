@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}"/> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Forum</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <center>
+  <body>
+	<script src="index.js"></script>
+	<h1>Na ovoj ruti izraditi forum</h1>
+
+	<ul> 
+              
+	<li> <a href="{{ url_for('login') }}" class="btn btn-primary btn-block btn-large">Login</a></li> 
+    <li> <a href="{{ url_for('register') }}" class="btn btn-secondary btn-block btn-large">Register</a></li> 
+    <li> <a href="{{ url_for('logout') }}" class="btn btn-secondary btn-block btn-large">Logout</a></li> 
+	
+	</ul> 
+	
+	<title>File Upload</title>
+    </head>
+    <body>
+        <form action = "/display" method = "POST" 
+             enctype = "multipart/form-data">
+             <input type = "file" name = "file" />
+             <br><br>
+             <input type = "submit"/>
+             <input type = "reset"/>
+          </form>  
+    </body>
+    </center>
+</html>
+
+
